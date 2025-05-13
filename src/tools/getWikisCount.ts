@@ -5,7 +5,7 @@ import { TranslationHelper } from "../createTranslationHelper.js";
 import { WikiCountSchema } from "../types/zod/backlogOutputDefinition.js";
 
 const getWikisCountSchema = buildToolSchema(t => ({
-  projectIdOrKey: z.union([z.string(), z.number()]).describe(t("TOOL_GET_WIKIS_COUNT_PROJECT_ID_OR_KEY", "Project ID or project key")),
+  projectIdOrKey: z.string().describe(t("TOOL_GET_WIKIS_COUNT_PROJECT_ID_OR_KEY", "Project ID or project key")),
 }));
 
 export const getWikisCountTool = (backlog: Backlog, { t }: TranslationHelper): ToolDefinition<ReturnType<typeof getWikisCountSchema>, typeof WikiCountSchema["shape"]> => {

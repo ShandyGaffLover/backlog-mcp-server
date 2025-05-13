@@ -5,7 +5,7 @@ import { TranslationHelper } from "../createTranslationHelper.js";
 import { PullRequestCommentSchema } from "../types/zod/backlogOutputDefinition.js";
 
 const updatePullRequestCommentSchema = buildToolSchema(t => ({
-  projectIdOrKey: z.union([z.string(), z.number()]).describe(t("TOOL_UPDATE_PULL_REQUEST_COMMENT_PROJECT_ID_OR_KEY", "Project ID or project key")),
+  projectIdOrKey: z.string().describe(t("TOOL_UPDATE_PULL_REQUEST_COMMENT_PROJECT_ID_OR_KEY", "Project ID or project key")),
   repoIdOrName: z.string().describe(t("TOOL_UPDATE_PULL_REQUEST_COMMENT_REPO_ID_OR_NAME", "Repository ID or name")),
   number: z.number().describe(t("TOOL_UPDATE_PULL_REQUEST_COMMENT_NUMBER", "Pull request number")),
   commentId: z.number().describe(t("TOOL_UPDATE_PULL_REQUEST_COMMENT_COMMENT_ID", "Comment ID")),

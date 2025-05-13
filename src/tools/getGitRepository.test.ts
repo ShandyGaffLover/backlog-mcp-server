@@ -58,10 +58,10 @@ describe("getGitRepositoryTool", () => {
 
   it("calls backlog.getGitRepository with correct params when using project ID", async () => {
     await tool.handler({
-      projectIdOrKey: 100,
+      projectIdOrKey: "100",
       repoIdOrName: "test-repo"
     });
     
-    expect(mockBacklog.getGitRepository).toHaveBeenCalledWith(100, "test-repo");
+    expect(mockBacklog.getGitRepository).toHaveBeenCalledWith("100", "test-repo");
   });
 });

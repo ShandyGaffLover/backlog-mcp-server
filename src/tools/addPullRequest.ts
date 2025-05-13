@@ -5,7 +5,7 @@ import { TranslationHelper } from "../createTranslationHelper.js";
 import { PullRequestSchema } from "../types/zod/backlogOutputDefinition.js";
 
 const addPullRequestSchema = buildToolSchema(t => ({
-  projectIdOrKey: z.union([z.string(), z.number()]).describe(t("TOOL_ADD_PULL_REQUEST_PROJECT_ID_OR_KEY", "Project ID or project key")),
+  projectIdOrKey: z.string().describe(t("TOOL_ADD_PULL_REQUEST_PROJECT_ID_OR_KEY", "Project ID or project key")),
   repoIdOrName: z.string().describe(t("TOOL_ADD_PULL_REQUEST_REPO_ID_OR_NAME", "Repository ID or name")),
   summary: z.string().describe(t("TOOL_ADD_PULL_REQUEST_SUMMARY", "Summary of the pull request")),
   description: z.string().describe(t("TOOL_ADD_PULL_REQUEST_DESCRIPTION", "Description of the pull request")),

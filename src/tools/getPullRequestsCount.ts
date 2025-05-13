@@ -5,7 +5,7 @@ import { TranslationHelper } from "../createTranslationHelper.js";
 import { PullRequestCountSchema } from "../types/zod/backlogOutputDefinition.js";
 
 const getPullRequestsCountSchema = buildToolSchema(t => ({
-  projectIdOrKey: z.union([z.string(), z.number()]).describe(t("TOOL_GET_PULL_REQUESTS_COUNT_PROJECT_ID_OR_KEY", "Project ID or project key")),
+  projectIdOrKey: z.string().describe(t("TOOL_GET_PULL_REQUESTS_COUNT_PROJECT_ID_OR_KEY", "Project ID or project key")),
   repoIdOrName: z.string().describe(t("TOOL_GET_PULL_REQUESTS_COUNT_REPO_ID_OR_NAME", "Repository ID or name")),
   statusId: z.array(z.number()).optional().describe(t("TOOL_GET_PULL_REQUESTS_COUNT_STATUS_ID", "Status IDs")),
   assigneeId: z.array(z.number()).optional().describe(t("TOOL_GET_PULL_REQUESTS_COUNT_ASSIGNEE_ID", "Assignee user IDs")),

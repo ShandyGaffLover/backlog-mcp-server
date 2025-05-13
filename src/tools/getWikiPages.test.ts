@@ -90,12 +90,12 @@ describe("getWikiPagesTool", () => {
 
   it("calls backlog.getWikis with correct params when using project ID and keyword", async () => {
     await tool.handler({
-      projectIdOrKey: 100,
+      projectIdOrKey: "100",
       keyword: "api"
     });
     
     expect(mockBacklog.getWikis).toHaveBeenCalledWith({
-      projectIdOrKey: 100,
+      projectIdOrKey: "100",
       keyword: "api"
     });
   });

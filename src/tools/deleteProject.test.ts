@@ -40,9 +40,9 @@ describe("deleteProjectTool", () => {
 
   it("calls backlog.deleteProject with correct params when using project ID", async () => {
     await tool.handler({
-      projectIdOrKey: 1
+      projectIdOrKey: "1"
     });
     
-    expect(mockBacklog.deleteProject).toHaveBeenCalledWith(1);
+    expect(mockBacklog.deleteProject).toHaveBeenCalledWith("1");
   });
 });
