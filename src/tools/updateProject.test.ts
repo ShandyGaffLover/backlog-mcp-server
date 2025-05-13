@@ -56,12 +56,12 @@ describe("updateProjectTool", () => {
 
   it("calls backlog.patchProject with correct params when using project ID", async () => {
     await tool.handler({
-      projectIdOrKey: 1,
+      projectIdOrKey: "1",
       chartEnabled: true,
       subtaskingEnabled: true
     });
     
-    expect(mockBacklog.patchProject).toHaveBeenCalledWith(1, {
+    expect(mockBacklog.patchProject).toHaveBeenCalledWith("1", {
       name: undefined,
       key: undefined,
       chartEnabled: true,

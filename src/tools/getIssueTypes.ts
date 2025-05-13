@@ -5,7 +5,7 @@ import { TranslationHelper } from "../createTranslationHelper.js";
 import { IssueTypeSchema } from "../types/zod/backlogOutputDefinition.js";
 
 const getIssueTypesSchema = buildToolSchema(t => ({
-  projectIdOrKey: z.union([z.string(), z.number()]).describe(t("TOOL_GET_ISSUE_TYPES_PROJECT_ID_OR_KEY", "Project ID or project key")),
+  projectIdOrKey: z.string().describe(t("TOOL_GET_ISSUE_TYPES_PROJECT_ID_OR_KEY", "Project ID or project key")),
 }));
 
 export const getIssueTypesTool = (backlog: Backlog, { t }: TranslationHelper): ToolDefinition<ReturnType<typeof getIssueTypesSchema>, typeof IssueTypeSchema["shape"]> => {

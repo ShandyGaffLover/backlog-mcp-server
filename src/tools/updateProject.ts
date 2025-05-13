@@ -5,7 +5,7 @@ import { TranslationHelper } from "../createTranslationHelper.js";
 import { ProjectSchema } from "../types/zod/backlogOutputDefinition.js";
 
 const updateProjectSchema = buildToolSchema(t => ({
-  projectIdOrKey: z.union([z.string(), z.number()]).describe(t("TOOL_UPDATE_PROJECT_PROJECT_ID_OR_KEY", "Project ID or project key")),
+  projectIdOrKey: z.string().describe(t("TOOL_UPDATE_PROJECT_PROJECT_ID_OR_KEY", "Project ID or project key")),
   name: z.string().optional().describe(t("TOOL_UPDATE_PROJECT_NAME", "Project name")),
   key: z.string().optional().describe(t("TOOL_UPDATE_PROJECT_KEY", "Project key")),
   chartEnabled: z.boolean().optional().describe(t("TOOL_UPDATE_PROJECT_CHART_ENABLED", "Whether to enable chart")),

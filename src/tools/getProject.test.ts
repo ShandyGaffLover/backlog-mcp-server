@@ -43,9 +43,9 @@ describe("getProjectTool", () => {
 
   it("calls backlog.getProject with correct params when using project ID", async () => {
     await tool.handler({
-      projectIdOrKey: 1
+      projectIdOrKey: "1"
     });
     
-    expect(mockBacklog.getProject).toHaveBeenCalledWith(1);
+    expect(mockBacklog.getProject).toHaveBeenCalledWith("1");
   });
 });

@@ -54,9 +54,9 @@ describe("getIssueTypesTool", () => {
 
   it("calls backlog.getIssueTypes with correct params when using project ID", async () => {
     await tool.handler({
-      projectIdOrKey: 100
+      projectIdOrKey: "100"
     });
     
-    expect(mockBacklog.getIssueTypes).toHaveBeenCalledWith(100);
+    expect(mockBacklog.getIssueTypes).toHaveBeenCalledWith("100");
   });
 });

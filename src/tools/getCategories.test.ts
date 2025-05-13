@@ -52,9 +52,9 @@ describe("getCategoriesTool", () => {
 
   it("calls backlog.getCategories with correct params when using project ID", async () => {
     await tool.handler({
-      projectIdOrKey: 100
+      projectIdOrKey: "100"
     });
     
-    expect(mockBacklog.getCategories).toHaveBeenCalledWith(100);
+    expect(mockBacklog.getCategories).toHaveBeenCalledWith("100");
   });
 });

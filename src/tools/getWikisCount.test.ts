@@ -34,9 +34,9 @@ describe("getWikisCountTool", () => {
 
   it("calls backlog.getWikisCount with correct params when using project ID", async () => {
     await tool.handler({
-      projectIdOrKey: 100
+      projectIdOrKey: "100"
     });
     
-    expect(mockBacklog.getWikisCount).toHaveBeenCalledWith(100);
+    expect(mockBacklog.getWikisCount).toHaveBeenCalledWith("100");
   });
 });

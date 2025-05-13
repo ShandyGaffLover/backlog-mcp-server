@@ -5,7 +5,7 @@ import { TranslationHelper } from "../createTranslationHelper.js";
 import { PullRequestCommentSchema } from "../types/zod/backlogOutputDefinition.js";
 
 const getPullRequestCommentsSchema = buildToolSchema(t => ({
-  projectIdOrKey: z.union([z.string(), z.number()]).describe(t("TOOL_GET_PULL_REQUEST_COMMENTS_PROJECT_ID_OR_KEY", "Project ID or project key")),
+  projectIdOrKey: z.string().describe(t("TOOL_GET_PULL_REQUEST_COMMENTS_PROJECT_ID_OR_KEY", "Project ID or project key")),
   repoIdOrName: z.string().describe(t("TOOL_GET_PULL_REQUEST_COMMENTS_REPO_ID_OR_NAME", "Repository ID or name")),
   number: z.number().describe(t("TOOL_GET_PULL_REQUEST_COMMENTS_NUMBER", "Pull request number")),
   minId: z.number().optional().describe(t("TOOL_GET_PULL_REQUEST_COMMENTS_MIN_ID", "Minimum comment ID")),
